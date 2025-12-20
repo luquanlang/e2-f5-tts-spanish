@@ -30,7 +30,7 @@ module.exports = {
         message: [
           "uv pip install -e .",
           "uv pip uninstall torchcodec",
-          "uv pip install hf_xet gradio==5.49.1"
+          "uv pip install hf_xet"
         ]
       }
     },
