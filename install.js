@@ -46,15 +46,6 @@ module.exports = {
       }
     },
     {
-      method: "shell.run",
-      params: {
-        path: "app",
-        message: [
-          "cp ../spanish_tts_app.py ."
-        ]
-      }
-    },
-    {
       method: "notify",
       params: {
         html: "Click the 'start' tab to get started!"

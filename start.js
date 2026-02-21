@@ -14,7 +14,7 @@ module.exports = {
         },
         path: "app",
         message: [
-          "python spanish_tts_app.py"
+          "python ../spanish_tts_app.py"
         ],
         on: [{
           "event": "/http:\/\/\\S+/",
