@@ -40,7 +40,17 @@ module.exports = {
         venv: "env",
         path: "app",
         message: [
-          "python -c \"content = open('src/f5_tts/infer/infer_gradio.py').read(); content = content.replace('hf://SWivid/F5-TTS/F5TTS_v1_Base/model_1250000.safetensors', 'hf://jpgallegoar/F5-Spanish/model_1250000.safetensors').replace('hf://SWivid/F5-TTS/F5TTS_v1_Base/vocab.txt', 'hf://jpgallegoar/F5-Spanish/vocab.txt'); open('src/f5_tts/infer/infer_gradio.py', 'w').write(content); print('Patched default model to Spanish F5-TTS')\""
+          "python -c \"content = open('src/f5_tts/infer/infer_gradio.py').read(); content = content.replace('hf://SWivid/F5-TTS/F5TTS_v1_Base/model_1250000.safetensors', 'hf://jpgallegoar/F5-Spanish/model_1250000.safetensors').replace('hf://SWivid/F5-TTS/F5TTS_v1_Base/vocab.txt', 'hf://jpgallegoar/F5-Spanish/vocab.txt'); open('src/f5_tts/infer/infer_gradio.py', 'w').write(content); print('Patched default model to Spanish F5-TTS')\"",
+          "python -c \"content = open('src/f5_tts/infer/utils_infer.py').read(); content = content.replace('ref_text = transcribe(ref_audio)', 'ref_text = transcribe(ref_audio, language=\\'es\\')'); open('src/f5_tts/infer/utils_infer.py', 'w').write(content); print('Patched STT to use Spanish language')\""
+        ]
+      }
+    },
+    {
+      method: "shell.run",
+      params: {
+        path: "app",
+        message: [
+          "cp ../spanish_tts_app.py ."
         ]
       }
     },

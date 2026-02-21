@@ -14,7 +14,7 @@ module.exports = {
         },
         path: "app",
         message: [
-          "f5-tts_infer-gradio"
+          "python spanish_tts_app.py"
         ],
         on: [{
           "event": "/http:\/\/\\S+/",
