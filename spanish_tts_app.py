@@ -80,9 +80,7 @@ def generate_audio(ref_audio, ref_transcript, gen_text, speed):
     if not gen_text.strip():
         raise gr.Error("Por favor ingresa el texto a generar.")
 
-    ref_audio_proc, ref_text_proc = preprocess_ref_audio_text(
-        ref_audio, ref_transcript, language="es"
-    )
+    ref_audio_proc, ref_text_proc = preprocess_ref_audio_text(ref_audio, ref_transcript)
 
     audio_out, sample_rate, _ = infer_process(
         ref_audio_proc,
