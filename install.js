@@ -35,6 +35,16 @@ module.exports = {
       }
     },
     {
+      method: "shell.run",
+      params: {
+        venv: "env",
+        path: "app",
+        message: [
+          "python -c \"content = open('src/f5_tts/infer/infer_gradio.py').read(); content = content.replace('hf://SWivid/F5-TTS/F5TTS_v1_Base/model_1250000.safetensors', 'hf://jpgallegoar/F5-Spanish/model_1250000.safetensors').replace('hf://SWivid/F5-TTS/F5TTS_v1_Base/vocab.txt', 'hf://jpgallegoar/F5-Spanish/vocab.txt'); open('src/f5_tts/infer/infer_gradio.py', 'w').write(content); print('Patched default model to Spanish F5-TTS')\""
+        ]
+      }
+    },
+    {
       method: "notify",
       params: {
         html: "Click the 'start' tab to get started!"
